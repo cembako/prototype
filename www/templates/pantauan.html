@@ -1,0 +1,60 @@
+<ion-view view-title="Pantauan">
+  <ion-content>
+    <ion-list>
+      <li class="item ">
+        <label class="item item-input item-select">
+          <div class="input-label ">
+            <b class="">Lokasi</b>
+          </div>
+          <select>
+            <option>Sleman</option>
+            <option selected>Yogyakarta</option>
+            <option>Bantul</option>
+          </select>
+        </label>                        
+        <label class="item item-input item-select">
+          <div class="input-label">
+            <b class="">Sembako</b>
+          </div>
+          <select>
+            <option>Gula</option>
+            <option selected>Beras</option>
+            <option>Cabe</option>
+          </select>
+        </label>                    
+        </li>
+      <ion-item class="item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">      
+      <div class="row">
+        <div class="col item-remove-animate item-avatar text-center">
+          <img ng-src="{{chat.face}}">          
+        </div>
+        <div class="col text-center">
+          <p><i class="ion-android-star energized"></i> {{chat.rate}}</p>
+        </div>
+        <div class="col-50">
+          <h2>{{chat.name}}</h2>
+          <b>{{chat.lastText}}</b>
+          <p>{{chat.lokasi}}</p>
+        </div>
+        <div class="col text-right">
+          <span><i class="ion-ios-arrow-thin-up assertive"></i></span>
+          <span><i class="ion-ios-arrow-thin-down balanced"></i></span>
+        </div>               
+      </div> 
+
+      <i class="icon ion-chevron-right icon-accessory"></i>
+
+      <ion-option-button class="button-balanced button-outline" ng-click="chat.rate = chat.rate + 1">
+        <a class="button-balanced icon ion-arrow-up-b"></a>
+      </ion-option-button>
+
+      <ion-option-button class="button-assertive button-outline" ng-click="chat.rate = chat.rate - 1">
+        <a class="button-assertive icon ion-arrow-down-b"></a>
+      </ion-option-button>  
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+  <!-- footer -->
+</ion-view>
