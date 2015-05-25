@@ -6,15 +6,15 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+.controller('PantauansCtrl', function($scope, Pantauans) {
+  $scope.pantauans = Pantauans.all();
+  $scope.remove = function(pantauan) {
+    Pantauans.remove(pantauan);
   }
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('PantauanDetailCtrl', function($scope, $stateParams, Pantauans) {
+  $scope.pantauan = Pantauans.get($stateParams.pantauanId);
 })
 
 .controller('AccountCtrl', function($scope) {

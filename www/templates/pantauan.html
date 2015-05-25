@@ -23,18 +23,18 @@
           </select>
         </label>                    
         </li>
-      <ion-item class="item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">      
+      <ion-item class="item-icon-right" ng-repeat="pantauan in pantauans" type="item-text-wrap" href="#/tab/pantauans/{{pantauan.id}}">      
       <div class="row">
         <div class="col item-remove-animate item-avatar text-center">
-          <img ng-src="{{chat.face}}">          
+          <img ng-src="{{pantauan.face}}">          
         </div>
         <div class="col text-center">
-          <p><i class="ion-android-star energized"></i> {{chat.rate}}</p>
+          <p><i class="ion-android-star energized"></i> {{pantauan.rate}}</p>
         </div>
         <div class="col-50">
-          <h2>{{chat.name}}</h2>
-          <b>{{chat.lastText}}</b>
-          <p>{{chat.lokasi}}</p>
+          <h2>{{pantauan.name}}</h2>
+          <b>{{pantauan.lastText}}</b>
+          <p>{{pantauan.lokasi}}</p>
         </div>
         <div class="col text-right">
           <span><i class="ion-ios-arrow-thin-up assertive"></i></span>
@@ -44,11 +44,11 @@
 
       <i class="icon ion-chevron-right icon-accessory"></i>
 
-      <ion-option-button class="button-balanced button-outline" ng-click="chat.rate = chat.rate + 1">
+      <ion-option-button class="button-balanced button-outline" ng-click="pantauan.rate = pantauan.rate + 1">
         <a class="button-balanced icon ion-arrow-up-b"></a>
       </ion-option-button>
 
-      <ion-option-button class="button-assertive button-outline" ng-click="chat.rate = chat.rate - 1">
+      <ion-option-button class="button-assertive button-outline" ng-click="pantauan.rate = pantauan.rate - 1">
         <a class="button-assertive icon ion-arrow-down-b"></a>
       </ion-option-button>  
 
