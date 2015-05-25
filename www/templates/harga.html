@@ -6,7 +6,7 @@
 
 		<label class="item item-input item-select">
 		    <div class="input-label">
-		      <b class="">Lokasi</b>
+		      <b>Lokasi</b>
 		    </div>
 		    <select>
 		      <option>Sleman</option>
@@ -17,13 +17,10 @@
 
 	  	<label class="item item-input item-select">
 		    <div class="input-label">
-		      <b class="">Sembako</b>
+		      <b>Sembako</b>
 		    </div>
-		    <select>
-		      <option>Gula</option>
-		      <option selected>Beras</option>
-		      <option>Cabe</option>
-		    </select>
+		    <select ng-init="selectedSembako=sembakos[0]" ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
+
 	  	</label>
 
 		</li>
@@ -32,9 +29,9 @@
 	  	<ul class="list">
 		    <li class="item">
 		    <h2 class="text-center" style="font-size:25px;">
-		      	<span class="balanced">Rp 10.500 /kg</span>
-			    <span><i class="ion-ios-arrow-thin-up assertive"></i></span>
-				<span><i class="ion-ios-arrow-thin-down balanced"></i></span>
+		      	<span>{{selectedSembako.prices['26'] | currency:"IDR":0 }}</span>
+			    <span ng-show='selectedSembako.prices["26"] > selectedSembako.prices["25"]'><i class="ion-ios-arrow-thin-up assertive"></i></span>
+				<span ng-show='selectedSembako.prices["26"] < selectedSembako.prices["25"]'><i class="ion-ios-arrow-thin-down balanced"></i></span>
 		    </h2>
 		    </li>
 		    <li class="item">		

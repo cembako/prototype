@@ -16,11 +16,7 @@
           <div class="input-label">
             <b class="">Sembako</b>
           </div>
-          <select>
-            <option>Gula</option>
-            <option selected>Beras</option>
-            <option>Cabe</option>
-          </select>
+          <select ng-init="selectedSembako=sembakos[0]" ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
         </label>                    
         </li>
       <ion-item class="item-icon-right" ng-repeat="pantauan in pantauans" type="item-text-wrap" href="#/tab/pantauans/{{pantauan.id}}">      
