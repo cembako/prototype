@@ -19,7 +19,8 @@
 		    <div class="input-label">
 		      <b>Sembako</b>
 		    </div>
-		    <select ng-change='drawChart()'  ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
+		    <select ng-change='drawChart(selectedSembako)' ng-init='selectedSembako=sembakos[0]' ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
+
 
 	  	</label>
 
@@ -35,7 +36,7 @@
 		    </h2>
 		    </li>
 		    <li class="item">		
-				<canvas id="myChart" style="width: 100%; height: 200px;"></canvas>
+				<canvas id="myChart"></canvas>
 		    </li>
 		</ul>
 

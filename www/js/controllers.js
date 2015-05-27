@@ -8,13 +8,10 @@ angular.module('starter.controllers', [])
   $scope.sembakos = Sembakos.all();
   console.log($scope.sembakos)
 
-  $scope.selectedSembako=$scope.sembakos[2]
+  //$scope.selectedSembako=$scope.sembakos[2]
   console.log('di controller, di luar drawChart')
 
-  $scope.drawChart = function() {
-    console.log('drawChart')
-    console.log($scope.selectedSembako)
-    
+  $scope.drawChart = function(selectedSembako) {    
     var data = {
         labels: [2, 5, 6, 9, 10, 11, 12, 13, 16, 17, 18, 20, 23, 24, 25, 26, 27],
         datasets: [{
@@ -30,16 +27,19 @@ angular.module('starter.controllers', [])
 
 
     var dataArray = []
-    for(var o in $scope.selectedSembako.prices) 
-      dataArray.push($scope.selectedSembako.prices[o]);
+    for(var o in selectedSembako.prices) 
+      dataArray.push(selectedSembako.prices[o]);
     data.datasets[0].data=dataArray;
-    console.log(data.datasets[0].data)
 
     var ctx = document.getElementById("myChart").getContext("2d");
+    ctx.canvas.width = 480;
+    ctx.canvas.height = 240;
+    var myLineChart = new Chart(ctx).Line(data);
+    myLineChart.destroy()
     var myLineChart = new Chart(ctx).Line(data);
   }
 
-  $scope.drawChart();
+  
 
 })
 
