@@ -19,7 +19,7 @@
 		    <div class="input-label">
 		      <b>Sembako</b>
 		    </div>
-		    <select ng-init="selectedSembako=sembakos[0]" ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
+		    <select ng-change='drawChart()'  ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
 
 	  	</label>
 
