@@ -56,7 +56,10 @@ angular.module('starter.controllers', [])
     $scope.sembakos = Sembakos.all();
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, Sembakos) {
+    $scope.sembakos = Sembakos.all();
+    console.log($scope.sembakos)
+    // $scope.sembakos=[];
     $scope.settings = {
         enableFriends: true
     };
