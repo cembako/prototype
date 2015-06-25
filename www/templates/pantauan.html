@@ -20,15 +20,15 @@
         </label>                    
         </li>
 
-      <ion-item class="" ng-repeat="pantauan in pantauans" type="item-text-wrap" >
+      <ion-item class="" ng-repeat="pantauan in pantauans" type="item-text-wrap" style="padding: 0;">
         <div class="row">
-          <div class="col item-remove-animate item-avatar text-center">
+          <div class="col item-avatar">
             <img ng-src="{{pantauan.face}}">          
           </div>
-          <div class="col text-center">
-          <a class="h2 button-balanced icon ion-arrow-up-b"></a>
-            <p>{{pantauan.rate}}</p>
-          <a class="h2 button-assertive icon ion-arrow-down-b"></a>
+          <div class="col">
+          <a class="icon ion-arrow-up-b XL" ng-click="pantauan.rate += 1"><i></i></a>
+            <p>&nbsp;{{pantauan.rate}}</p>
+          <a class="icon ion-arrow-down-b XL" ng-click="pantauan.rate -= 1"></a>
           </div>
           <div class="col-50">
             <h2><b>{{pantauan.lastText}}</b></h2>
