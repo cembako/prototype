@@ -15,29 +15,23 @@
 		    </select>
 	  	</label>	
 
-	  	<label class="item item-input item-select">
-		    <div class="input-label">
-		      <b>Sembako</b>
-		    </div>
-		    <select ng-change='drawChart(selectedSembako)' ng-init='selectedSembako=sembakos[0]' ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
-
-
-	  	</label>
-
 		</li>
 
 		<!-- Output -->
 	  	<ul class="list">
-		    <li class="item">
-		    <h2 class="text-center" style="font-size:25px;">
-		      	<span>{{selectedSembako.prices['26'] | currency:"IDR":0 }}</span>
-			    <span ng-show='selectedSembako.prices["26"] > selectedSembako.prices["25"]'><i class="ion-ios-arrow-thin-up assertive"></i></span>
-				<span ng-show='selectedSembako.prices["26"] < selectedSembako.prices["25"]'><i class="ion-ios-arrow-thin-down balanced"></i></span>
-		    </h2>
-		    </li>
-		    <li class="item">		
-				<canvas id="myChart"></canvas>
-		    </li>
+	  		<li class="item">
+	  		    <h3>
+	  		      	Beras Filipina
+	  		    	<div class="text-right">IDR15,204&nbsp; &nbsp; <i class="icon ion-chevron-up"></div></i>
+	  		    </h3>
+	  		    <canvas id="myChart"></canvas>
+	  		</li>
+	  		<li class="item" ng-repeat="sembako in sembakos">
+	  		    <h3>
+	  		      	{{sembako.name}}
+	  		      	<div class="text-right float-right">{{sembako.prices[26] | currency:"IDR":0 }} &nbsp; &nbsp; <i class="icon ion-chevron-down"></i></div>
+	  		    </h3>
+	  		</li>	  		
 		</ul>
 
 	</ion-list>	

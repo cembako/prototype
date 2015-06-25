@@ -5,13 +5,13 @@ angular.module('starter.controllers', [])
       $ionicSideMenuDelegate.toggleLeft();
   };
 
-  $scope.sembakos = Sembakos.all();
+  $scope.sembakos = sembakos = Sembakos.all();
   console.log($scope.sembakos)
 
   //$scope.selectedSembako=$scope.sembakos[2]
   console.log('di controller, di luar drawChart')
 
-  $scope.drawChart = function(selectedSembako) {    
+  $scope.drawChart = drawChart= function(selectedSembako) {    
     var data = {
         labels: [2, 5, 6, 9, 10, 11, 12, 13, 16, 17, 18, 20, 23, 24, 25, 26, 27],
         datasets: [{
@@ -38,6 +38,8 @@ angular.module('starter.controllers', [])
     myLineChart.destroy()
     var myLineChart = new Chart(ctx).Line(data);
   }
+
+  drawChart(sembakos[0])
 
   
 
