@@ -1,8 +1,15 @@
-<ion-view view-title="Berita">
+<ion-view view-title="Berita Sembako">
   <ion-content>
     <ion-list>
     	<!-- Header -->
 		<li class="item">
+		    <label class="item item-input item-select">
+			    <div class="input-label">
+			      <b class="">Sembako</b>
+			    </div>
+			    <select ng-init="selectedSembako=sembakos[0]" ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
+		  	</label>	                 
+		  	
 			<label class="item item-input item-select">
 		      <div class="input-label">
 		        <b class="">Sumber berita</b>
@@ -14,12 +21,6 @@
 		      </select>
 		    </label>       
 		    
-		    <label class="item item-input item-select">
-			    <div class="input-label">
-			      <b class="">Sembako</b>
-			    </div>
-			    <select ng-init="selectedSembako=sembakos[0]" ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
-		  	</label>	                 
 		</li>
 
 		<!-- kurang paham ng-repeat -->
