@@ -19,35 +19,24 @@
           <select ng-init="selectedSembako=sembakos[0]" ng-model='selectedSembako' ng-options="sembako.name for sembako in sembakos"></select>
         </label>                    
         </li>
-      <ion-item class="item-icon-right" ng-repeat="pantauan in pantauans" type="item-text-wrap" href="#/tab/pantauans/{{pantauan.id}}">      
-      <div class="row">
-        <div class="col item-remove-animate item-avatar text-center">
-          <img ng-src="{{pantauan.face}}">          
-        </div>
-        <div class="col text-center">
-          <p><i class="ion-android-star energized"></i> {{pantauan.rate}}</p>
-        </div>
-        <div class="col-50">
-          <h2>{{pantauan.name}}</h2>
-          <b>{{pantauan.lastText}}</b>
-          <p>{{pantauan.lokasi}}</p>
-        </div>
-        <div class="col text-right">
-          <span><i class="ion-ios-arrow-thin-up assertive"></i></span>
-          <span><i class="ion-ios-arrow-thin-down balanced"></i></span>
-        </div>               
-      </div> 
 
-      <i class="icon ion-chevron-right icon-accessory"></i>
+      <ion-item class="" ng-repeat="pantauan in pantauans" type="item-text-wrap" >
+        <div class="row">
+          <div class="col item-remove-animate item-avatar text-center">
+            <img ng-src="{{pantauan.face}}">          
+          </div>
+          <div class="col text-center">
+          <a class="h2 button-balanced icon ion-arrow-up-b"></a>
+            <p>{{pantauan.rate}}</p>
+          <a class="h2 button-assertive icon ion-arrow-down-b"></a>
+          </div>
+          <div class="col-50">
+            <h2><b>{{pantauan.lastText}}</b></h2>
+            <p>{{pantauan.lokasi}}</p>
+            <small>{{pantauan.name}}</small>
+          </div>
 
-      <ion-option-button class="button-balanced button-outline" ng-click="pantauan.rate = pantauan.rate + 1">
-        <a class="button-balanced icon ion-arrow-up-b"></a>
-      </ion-option-button>
-
-      <ion-option-button class="button-assertive button-outline" ng-click="pantauan.rate = pantauan.rate - 1">
-        <a class="button-assertive icon ion-arrow-down-b"></a>
-      </ion-option-button>  
-
+          
       </ion-item>
     </ion-list>
 
